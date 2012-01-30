@@ -1,0 +1,26 @@
+function da () {
+    ls -lah "$@" | $PAGER
+}
+
+function dir () {
+    if [ $# -eq 0 ]; then
+        ls -Fldp * | grep /
+    else
+        ls -Fldp "$@" | grep /
+    fi
+}
+
+# turn info pages into man pages :)
+function info () {
+    /usr/bin/info --subnodes --output - "$@" 2>/dev/null | $PAGER
+}
+
+function parse_git_dirty {
+  git diff --quiet HEAD &>/dev/null
+  [[ $? == 1 ]] && echo "*"
+}
+
+function parse_git_branch {
+  local branch=$(__git_ps1 "%s")
+  [[ $branch ]] && echo "[$branch$(parse_git_dirty)]"
+}

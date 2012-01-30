@@ -1,0 +1,38 @@
+# directory and file stuff
+alias d='\ls -lh'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mkdir='mkdir -p'
+alias md='\mkdir -p'
+alias rd=rmdir
+alias ..='cd ../'
+alias ...='cd ../../'
+alias cd..='cd ../'
+alias tree='tree -Csu'
+alias du='du -kh'
+alias df='df -kTh'
+
+# single letter aliases
+alias e=$EDITOR
+alias g=git
+# Autocomplete for 'g' as well
+complete -o default -o nospace -F _git g
+alias m=$PAGER
+# reattach a screen session
+alias r='screen -d -r -a -A'
+
+# use other tools as default
+alias which='type -all'
+alias gr='pcregrep'
+
+# default options
+alias ps='/bin/ps aufwwx'
+
+# other stuff
+alias hs='history | grep -i'
+
+# extracting and listing archives
+alias al='patool list'
+alias ax='patool extract'
+alias ac='patool create'

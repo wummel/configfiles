@@ -1,0 +1,10 @@
+export CLICOLOR=1
+export FIGNORE=".o:.class:~:.pyc:.pyo"
+export PAGER=less
+export RSYNC_RSH=ssh
+export CVS_RSH=ssh
+export HISTIGNORE="&:bg:fg:ll:ls:exit:h"
+export HISTCONTROL=ignoreboth
+export LESS="-R"
+export LESSHISTFILE="-"
+export PYTHONPATH=/usr/local/lib/python

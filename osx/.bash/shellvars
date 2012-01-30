@@ -1,0 +1,20 @@
+umask 0027		# safer umask
+ulimit -c 0		# no core dumps
+
+set -o notify		# process notification
+set -o noclobber	# dont overwrite files
+#set -o xtrace		# useful for debugging
+
+#shopt -s cdspell	# correct typos in 'cd'
+#shopt -s cdable_vars	# try variable expansion on non-dirs
+shopt -s checkhash	# verify hashed command paths
+shopt -s checkwinsize	# check window size after each command
+shopt -s cmdhist	# multi-line commands in a single hist entry
+shopt -s extglob	# extended regexes
+shopt -s no_empty_cmd_completion
+shopt -s histreedit histverify
+shopt -s histappend	# always append to history file
+PROMPT_COMMAND='history -a'
+
+unset MAIL
+unset MAILCHECK

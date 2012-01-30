@@ -1,0 +1,66 @@
+function da () {
+    ls -lah --time-style=long-iso --quoting-style=shell --color=always "$@" | $PAGER
+}
+
+function dir () {
+    if [ $# -eq 0 ]; then
+        ls -Fldp * | grep /
+    else
+        ls -Fldp "$@" | grep /
+    fi
+}
+
+function wclear () {
+   c=$1
+   shift
+   $c "$@"; clear
+}
+
+# turn info pages into man pages :)
+function info () {
+    /usr/bin/info --subnodes --output - "$@" 2>/dev/null | $PAGER
+}
+
+# reset pretty much everything
+function c () {
+    cd $HOME
+    tput reset
+    history -c
+    if [ "$TERM" = "screen" ]; then
+        # clean screen buffer with a hack
+	screen -d -X scrollback 0
+	screen -d -X scrollback 10000
+    fi
+}
+
+# list upstream changelogs
+function luc () {
+    $PAGER /usr/share/doc/$1/changelog.gz
+}
+
+function python () {
+    if [ $# -eq 0 ]; then
+        /usr/bin/bpython
+    else
+        /usr/bin/python "$@"
+    fi
+}
+
+function parse_git_dirty {
+  git diff --quiet HEAD &>/dev/null
+  [[ $? == 1 ]] && echo "*"
+}
+
+function parse_git_branch {
+  local branch=$(__git_ps1 "%s")
+  [[ $branch ]] && echo "[$branch$(parse_git_dirty)]"
+}
+
+# Start editor kate, changing working directory if given as first arg.
+function ex () {
+    if [ -d "$1" ]; then
+        pushd "$1"; shift; kate --use "$@"; popd
+    else
+        kate --use "$@"
+    fi
+}

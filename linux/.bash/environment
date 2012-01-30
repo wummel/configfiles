@@ -1,0 +1,31 @@
+export EDITOR=efte
+export PS1="\u@\h:/\w>"
+export PS2=" "
+export FIGNORE=".o:.class:~:.pyc:.pyo"
+export PAGER=most
+export RSYNC_RSH=ssh
+export CVS_RSH=ssh
+export CVSEDITOR=$EDITOR
+export HISTIGNORE="&:bg:fg:ll:ls:exit:h"
+export HISTCONTROL=ignoreboth
+export MAILDIR=$HOME/Maildir
+export DEBSIGN_KEYID=32EC6F3E
+export DEBEMAIL=calvin@debian.org
+# ssh agent
+export SSH_ASKPASS=ssh-askpass
+# lesspipe: view .gz files and more
+export LESSOPEN="| /usr/bin/lesspipe %s";
+export LESSCLOSE="/usr/bin/lesspipe %s %s";
+export LESS="-R"
+export LESSHISTFILE="-"
+export GREP_OPTIONS='--color=auto --exclude="tags" --exclude="TAGS" --exclude-dir=.git --exclude-dir=.svn --exclude-dir=CVS'
+export QUILT_PATCHES=debian/patches
+export QUILT_DIFF_OPTS="-pd"
+export DPEP_DIFF_OPTIONS="-pd"
+export DPEP_TMPDIR=/var/tmp
+# citrix client
+export ICAROOT=/home/calvin/src/ICAClient
+# Python path augmentation
+export PYTHONPATH=$HOME/lib/python
+
+export TODOTXT_DEFAULT_ACTION=ls
