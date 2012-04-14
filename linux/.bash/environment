@@ -23,8 +23,6 @@ export QUILT_PATCHES=debian/patches
 export QUILT_DIFF_OPTS="-pd"
 export DPEP_DIFF_OPTIONS="-pd"
 export DPEP_TMPDIR=/var/tmp
-# citrix client
-export ICAROOT=/home/calvin/src/ICAClient
 # Python path augmentation
 export PYTHONPATH=$HOME/lib/python
 
