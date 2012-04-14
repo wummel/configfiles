@@ -1,0 +1,48 @@
+[user]
+	name = Bastian Kleineidam
+	email = calvin@debian.org
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+        # commits
+	c = commit
+	# commit with a message
+	cm = commit -m
+	# amending the previous commit
+	ca = commit --amend
+
+        # reset
+	## soft resets
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	## hard resets
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	rh1 = reset HEAD^^ --hard
+
+	# shortcuts for commands
+	s = status
+	d = diff
+	a = add
+	co = checkout
+	b = branch
+	l = log
+	f = fetch
+	p = push
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[svn]
+	rmdir = true
+[push]
+	default = upstream
+[core]
+	whitespace = trailing-space,space-before-tab
+[diff]
+	mnemonicprefix = true
+	renames = copies
