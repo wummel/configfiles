@@ -1,6 +1,6 @@
 [user]
 	name = Bastian Kleineidam
-	email = calvin@debian.org
+	email = bastian.kleineidam@web.de
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all

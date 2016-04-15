@@ -21,7 +21,7 @@ alias du='du -kh'
 alias df='df -kTh'
 
 # single letter aliases
-alias a='sudo TMPDIR=/var/tmp aptitude'
+alias a='sudo aptitude'
 alias e=$EDITOR
 alias g=git
 # Autocomplete for 'g' as well
@@ -30,41 +30,20 @@ alias m=most
 # reattach a screen session
 alias r='screen -d -r -a -A'
 
-# colored output
-alias cvs=/usr/bin/colorcvs
-alias svn=/usr/bin/colorsvn
-
 # use other tools as default
 alias top="htop -d 50"
 alias host=dnsip
 alias which='type -all'
-alias calculator=galculator
-alias agrep='ack-grep -a'
-
-# some common functions
-alias mutt='wclear /usr/bin/mutt'
-alias mutt-spam='wclear /usr/bin/mutt -f ~/Maildir/.Junk -F ~/.mutt/muttrc-spam'
-alias editqmail='chmod +t $HOME; $EDITOR $HOME/.qmail; chmod -t $HOME'
-
-# use TOR network
-alias wget='torify wget'
-alias curl='torify curl'
 
 # default options
-alias xine='gxine -S'
 alias ps='/bin/ps aufwwx'
 
 # other stuff
 alias hs='history | grep -i'
 alias vi='wclear /usr/bin/vim'
-alias fb='fakeroot debian/rules build'
-alias rc='rc-alert --exclude-tags +I --include-dists U'
-alias t='$HOME/src/todo.txt_cli-2.8/todo.sh'
 
 # extracting and listing archives
 alias al='patool list'
 alias ax='patool extract'
 alias ac='patool create'
 
-alias mplayer=mplayer2
-#alias sshwork='ssh -t work-username@my-work-computer.com "screen -dR"'

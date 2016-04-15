@@ -5,8 +5,6 @@ if [ -e $HOME/.bashrc ]; then
 fi
 shopt -s huponexit
 
-# augment PATH with local dirs
-PATH="/usr/lib/ccache:/sbin:/usr/sbin:$HOME/bin:$PATH"
+# augment PATH with sbin dirs
+PATH="/sbin:/usr/sbin:$PATH"
 export PATH
-#/usr/bin/keychain $HOME/.ssh/id_dsa
-#. $HOME/.keychain/${HOSTNAME}-sh

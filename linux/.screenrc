@@ -1,0 +1,74 @@
+# use UTF8
+defutf8         on
+
+# Define the time that all windows monitored for silence should wait before displaying a message.
+silencewait      15
+# Activity display message
+activity "%c activity -> %n%f %t"
+
+# display funny nethack messages
+nethack on
+
+# detach on hangup
+startup_message off
+
+# reserve more scrollback lines
+defscrollback 10000
+
+# make shift-pageup/down work
+termcapinfo xterm ti@:te@
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# Create a status line at the bottom of the screen.
+# This will show the titles and locations of all screen windows you
+# have open at any given time.
+hardstatus alwayslastline "%{= dR} %-Lw%50>%{= dG}%n%f* %{= dW}%t%{= dR}%+Lw%<"
+
+# use visual bell, not audible
+vbell           on
+# Message shown when the "visual bell" rings.
+vbell_msg " *beep* "
+# Message shown when the "bell" rings.
+bell "%c bell -> %n%f %t^G"
+
+
+# default screens created on startup
+screen    -t mail  1
+screen -M -t root  2
+screen    -t misc1  3
+screen    -t misc2  4
+
+# bind function keys F1-F8
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
+bindkey -k k5 select 5
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 select 8
+
+# test this
+#bindkey -k kb stuff ^H
+#bindkey -k kD stuff \033[3~
+
+# remove some stupid / dangerous key bindings
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+
+# make them better
+bind 'K' kill
+bind 'I' login on
+bind 'O' login off
+bind '}' history
+bind h  hardcopy
+
+# select first screen on startup
+select 1
+

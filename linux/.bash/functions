@@ -38,14 +38,6 @@ function luc () {
     $PAGER /usr/share/doc/$1/changelog.gz
 }
 
-function python () {
-    if [ $# -eq 0 ]; then
-        /usr/bin/bpython
-    else
-        /usr/bin/python "$@"
-    fi
-}
-
 function parse_git_dirty {
   git diff --quiet HEAD &>/dev/null
   [[ $? == 1 ]] && echo "*"
@@ -56,11 +48,3 @@ function parse_git_branch {
   [[ $branch ]] && echo "[$branch$(parse_git_dirty)]"
 }
 
-# Start editor kate, changing working directory if given as first arg.
-function ex () {
-    if [ -d "$1" ]; then
-        pushd "$1"; shift; kate --use "$@"; popd
-    else
-        kate --use "$@"
-    fi
-}
