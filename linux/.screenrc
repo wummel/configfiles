@@ -24,7 +24,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 # Create a status line at the bottom of the screen.
 # This will show the titles and locations of all screen windows you
 # have open at any given time.
-hardstatus alwayslastline "%{= dR} %-Lw%50>%{= dG}%n%f* %{= dW}%t%{= dR}%+Lw%<"
+hardstatus alwayslastline '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f%t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{y}][%{G} %l%{y}] %{y}[%{G} %m/%d %c %{y}]%{W}'
 
 # use visual bell, not audible
 vbell           on
